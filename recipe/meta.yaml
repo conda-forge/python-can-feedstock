@@ -25,6 +25,8 @@ requirements:
     - python
     - pyserial
     - setuptools
+    - wrapt
+    - typing
 
 test:
   imports:
