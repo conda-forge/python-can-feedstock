@@ -1,6 +1,6 @@
 {% set name = "python-can" %}
-{% set version = "3.0.0" %}
-{% set sha256 = "0d2ddb3b663af51b11a4c7fb7a577c63302a831986239f82bb6af65efc065b07" %}
+{% set version = "3.1.1" %}
+{% set sha256 = "99c06d05f8aa6fa9a84f39a11987c303c030411c3280e39bef0b5cd2242ad09f" %}
 
 package:
   name: {{ name|lower }}
