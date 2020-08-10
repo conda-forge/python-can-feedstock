@@ -1,6 +1,6 @@
 {% set name = "python-can" %}
-{% set version = "3.1.0" %}
-{% set sha256 = "e2b643361777526f878b59b85fdd81fab56e418422a41c1d9520817198dfceec" %}
+{% set version = "3.3.3" %}
+{% set sha256 = "ecd69cf6b2f0235345ebe607a15325cf1384c85b24ffbe1d68c3754357f87488" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
