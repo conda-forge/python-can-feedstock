@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About python-can
 ================
 
@@ -9,26 +5,62 @@ Home: https://github.com/hardbyte/python-can
 
 Package license: LGPLv3+
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-can-feedstock/blob/master/LICENSE.txt)
 
 Summary: The can package provides controller area network support for Python developers 
 
+Development: https://github.com/hardbyte/python-can
+
+Documentation: https://python-can.readthedocs.org/en/stable/
+
 The **C**\ ontroller **A**\ rea **N**\ etwork is a bus standard designed
 to allow microcontrollers and devices to communicate with each other. It
-has priority based bus arbitration, reliable deterministic
+has priority based bus arbitration and reliable deterministic
 communication. It is used in cars, trucks, boats, wheelchairs and more.
+
 The ``can`` package provides controller area network support for
-Python developers; providing `common abstractions to
-different hardware devices`, and a suite of utilities for sending and receiving
+Python developers; providing common abstractions to
+different hardware devices, and a suite of utilities for sending and receiving
 messages on a can bus.
-The library supports Python 2.7, Python 3.4+ as well as PyPy 2 & 3 and runs on Mac, Linux and Windows.
+
+The library currently supports CPython as well as PyPy and runs on Mac, Linux and Windows.
+
+==============================  ===========
+Library Version                 Python
+------------------------------  -----------
+  2.x                           2.6+, 3.4+
+  3.x                           2.7+, 3.5+
+  4.x *(currently on develop)*  3.7+
+==============================  ===========
+
+
+Features
+--------
+
+- common abstractions for CAN communication
+- support for many different backends (see the `docs <https://python-can.readthedocs.io/en/stable/interfaces.html>`__)
+- receiving, sending, and periodically sending messages
+- normal and extended arbitration IDs
+- `CAN FD <https://en.wikipedia.org/wiki/CAN_FD>`__ support
+- many different loggers and readers supporting playback: ASC (CANalyzer format), BLF (Binary Logging Format by Vector), CSV, SQLite and Canutils log
+- efficient in-kernel or in-hardware filtering of messages on supported interfaces
+- bus configuration reading from a file or from environment variables
+- command line tools for working with CAN buses (see the `docs <https://python-can.readthedocs.io/en/stable/scripts.html>`__)
+- more
 
 
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/python-can-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/python-can-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4805&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/python-can-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -44,6 +76,7 @@ Installing `python-can` from the `conda-forge` channel can be achieved by adding
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `python-can` can be installed with:
@@ -62,7 +95,8 @@ conda search python-can --channel conda-forge
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -73,7 +107,7 @@ A feedstock is made up of a conda recipe (the instructions on what and how to bu
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
 [CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.org/) it is possible to build and upload installable
+and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
 packages to the [conda-forge](https://anaconda.org/conda-forge)
 [Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
 
@@ -114,9 +148,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
