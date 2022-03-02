@@ -12,19 +12,19 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  noarch: python >=3.7
+  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
     - setuptools
   run:
     - msgpack
     - packaging
-    - python
+    - python >=3.7
     - pyserial
     - pywin32
     - setuptools
