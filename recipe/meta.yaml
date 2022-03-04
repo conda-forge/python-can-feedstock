@@ -22,7 +22,7 @@ requirements:
     - pip
     - setuptools
   run:
-#    - msgpack           # [win]
+    - msgpack  # [win]
     - packaging
     - python >=3.7
     - pyserial
@@ -30,27 +30,27 @@ requirements:
     - setuptools
     - typing
     - typing_extensions >=3.10.0.0
-#    - windows-curses    # [win]
+    - windows-curses  # [win]
     - wrapt
 
 test:
   imports:
     - can
     - can.interfaces
-    - can.interfaces.etas
-    - can.interfaces.ics_neovi
-    - can.interfaces.ixxat
-    - can.interfaces.kvaser
-    - can.interfaces.neousys
-    - can.interfaces.pcan
-    - can.interfaces.seeedstudio
+#    - can.interfaces.etas
+#    - can.interfaces.ics_neovi
+#    - can.interfaces.ixxat
+#    - can.interfaces.kvaser
+#    - can.interfaces.neousys
+#    - can.interfaces.pcan
+#    - can.interfaces.seeedstudio
     - can.interfaces.serial
     - can.interfaces.socketcan
     - can.interfaces.socketcand
-    - can.interfaces.systec
+#    - can.interfaces.systec
     - can.interfaces.udp_multicast
-    - can.interfaces.usb2can
-    - can.interfaces.vector
+#    - can.interfaces.usb2can
+#    - can.interfaces.vector
     - can.io
 
 about:
