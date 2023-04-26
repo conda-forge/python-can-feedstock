@@ -1,11 +1,11 @@
-About python-can
-================
+About python-can-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-can-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/hardbyte/python-can
 
 Package license: LGPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-can-feedstock/blob/main/LICENSE.txt)
 
 Summary: The can package provides controller area network support for Python developers 
 
