@@ -32,7 +32,6 @@ requirements:
     - typing_extensions >=3.10.0.0
 #    - windows-curses  # [win]
     - wrapt
-    - msgpack-python
 
 test:
   imports:
