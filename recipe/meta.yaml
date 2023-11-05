@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -32,6 +32,7 @@ requirements:
     - typing_extensions >=3.10.0.0
 #    - windows-curses  # [win]
     - wrapt
+    - msgpack-python
 
 test:
   imports:
@@ -52,6 +53,10 @@ test:
 #    - can.interfaces.usb2can
 #    - can.interfaces.vector
     - can.io
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/hardbyte/python-can
