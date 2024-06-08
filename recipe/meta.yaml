@@ -1,6 +1,6 @@
 {% set name = "python-can" %}
-{% set version = "4.2.2" %}
-{% set sha256 = "6ad50f4613289f3c4d276b6d2ac8901d776dcb929994cce93f55a69e858c595f" %}
+{% set version = "4.4.0" %}
+{% set sha256 = "69b5bc8364d8f19c9dfc35107610634fe9ff8dda84ee2e54b81458ac8ca11737" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
