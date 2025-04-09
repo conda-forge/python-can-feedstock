@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/p/python-can/python-can-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/python_can/python_can-{{ version }}.tar.gz
   sha256: d3684cebe5b028a148c1742b3a45cec4fcaf83a7f7c52d0680b2eaeaf52f8eb7
 
 build:
