@@ -185,4 +185,5 @@ Feedstock Maintainers
 
 * [@danielhrisca](https://github.com/danielhrisca/)
 * [@hardbyte](https://github.com/hardbyte/)
+* [@hmaarrfk](https://github.com/hmaarrfk/)
 
