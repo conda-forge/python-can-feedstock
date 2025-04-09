@@ -28,8 +28,8 @@ requirements:
     - typing
     - typing_extensions >=3.10.0.0
     - wrapt >=1.10.0
-    - pywin32   # [win]
-    - windows-curses  # [win]
+    - pywin32         # [win]
+    # - windows-curses  # [win]
 
 test:
   requires:
