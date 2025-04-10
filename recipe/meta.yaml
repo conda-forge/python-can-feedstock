@@ -35,6 +35,7 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pip
   imports:
     - can
     - can.interfaces
@@ -53,6 +54,8 @@ test:
 #    - can.interfaces.usb2can
 #    - can.interfaces.vector
     - can.io
+  commands:
+    - pip check
 
 about:
   home: https://github.com/hardbyte/python-can
