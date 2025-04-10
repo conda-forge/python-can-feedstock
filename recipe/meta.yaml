@@ -1,39 +1,41 @@
-{% set name = "python-can" %}
-{% set version = "4.2.2" %}
-{% set sha256 = "6ad50f4613289f3c4d276b6d2ac8901d776dcb929994cce93f55a69e858c595f" %}
+{% set version = "4.5.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: python-can
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/p/python_can/python_can-{{ version }}.tar.gz
+  sha256: d3684cebe5b028a148c1742b3a45cec4fcaf83a7f7c52d0680b2eaeaf52f8eb7
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - sed -i 's/dynamic = .*/version = "{{ version }}"/' pyproject.toml
+    - echo "__version__ = '{{ version }}'" >> can/__init__.py
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-#    - msgpack  # [win]
+    - msgpack-python
     - packaging
-    - python >=3.7
+    - python >={{ python_min }}
     - pyserial
-    - pywin32
-    - setuptools
     - typing
     - typing_extensions >=3.10.0.0
-#    - windows-curses  # [win]
-    - wrapt
+    - wrapt >=1.10.0
+    # - pywin32         # [win]
+    # - windows-curses  # [win]
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - can
     - can.interfaces
@@ -52,6 +54,8 @@ test:
 #    - can.interfaces.usb2can
 #    - can.interfaces.vector
     - can.io
+  commands:
+    - pip check
 
 about:
   home: https://github.com/hardbyte/python-can
@@ -102,3 +106,4 @@ extra:
   recipe-maintainers:
     - hardbyte
     - danielhrisca
+    - hmaarrfk
