@@ -11,7 +11,10 @@ source:
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - sed -i 's/dynamic = .*/version = "{{ version }}"/' pyproject.toml
+    - echo "__version__ = '{{ version }}'" >> can/__init__.py
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
