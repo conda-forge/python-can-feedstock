@@ -12,8 +12,6 @@ build:
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
-  string: "win_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}"    # [win]
-  string: "unix_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}"   # [unix]
 
 requirements:
   host:
@@ -28,7 +26,7 @@ requirements:
     - typing
     - typing_extensions >=3.10.0.0
     - wrapt >=1.10.0
-    - pywin32         # [win]
+    # - pywin32         # [win]
     # - windows-curses  # [win]
 
 test:
@@ -45,8 +43,8 @@ test:
 #    - can.interfaces.pcan
 #    - can.interfaces.seeedstudio
     - can.interfaces.serial
-    - can.interfaces.socketcan     # [unix]
-    - can.interfaces.socketcand    # [unix]
+    - can.interfaces.socketcan
+    - can.interfaces.socketcand
 #    - can.interfaces.systec
     - can.interfaces.udp_multicast
 #    - can.interfaces.usb2can
