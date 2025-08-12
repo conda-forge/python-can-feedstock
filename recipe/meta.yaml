@@ -1,4 +1,4 @@
-{% set version = "4.6.0" %}
+{% set version = "4.6.1" %}
 
 package:
   name: python-can
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/python_can/python_can-{{ version }}.tar.gz
-  sha256: e94f28e8b223c950d3ef1bcba39ac93ee6759356dadfd82671dc5e052beaa014
+  sha256: 290fea135d04b8504ebff33889cc6d301e2181a54099116609f940825ffe5005
 
 build:
   noarch: python
