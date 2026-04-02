@@ -7,10 +7,12 @@ package:
 source:
   url: https://pypi.org/packages/source/p/python_can/python_can-{{ version }}.tar.gz
   sha256: 290fea135d04b8504ebff33889cc6d301e2181a54099116609f940825ffe5005
+  patches:
+    - 1980-wrapt_version.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script:
     - sed -i 's/dynamic = .*/version = "{{ version }}"/' pyproject.toml
     - echo "__version__ = '{{ version }}'" >> can/__init__.py
@@ -28,7 +30,7 @@ requirements:
     - pyserial
     - typing
     - typing_extensions >=3.10.0.0
-    - wrapt >=1.10.0
+    - wrapt >=1.10.0,<3
     # - pywin32         # [win]
     # - windows-curses  # [win]
 
